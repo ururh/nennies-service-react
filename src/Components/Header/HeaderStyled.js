@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
+import { MdMenu } from "react-icons/md";
 
 
 export const HeaderContainer = styled.header`
@@ -10,6 +11,10 @@ export const HeaderContainer = styled.header`
     background-color: transparent;
     color: var(--title-text);
     border-bottom: 1px solid rgba(251, 251, 251, 0.40);
+
+      @media (max-width: 768px) {
+    padding: 20px 30px;
+  }
 `
 
 export const Logo = styled.h2`
@@ -37,7 +42,7 @@ export const Nav = styled.nav`
     align-items: center;
       @media (max-width: 768px) {
     flex-direction: column;
-    color: var( --title-text);
+    color: var( --main-color);
     gap:15px;
     margin-right: 0;
     margin-bottom: 15px;
@@ -64,6 +69,15 @@ export const NavItem = styled(NavLink)`
       border-radius: 50%;
     }
   }
+
+   @media (max-width: 768px) {
+    &.active {
+    &::after {
+      background-color: var(--main-color); 
+    }
+  }
+  }
+  
 `;
 
 export const ButtonContainer = styled.div`
@@ -90,6 +104,10 @@ line-height: 20px;
   &:focus {
     transform: scale(0.9);
   }
+    @media (max-width: 768px) {
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+  }
 `
 
 export const ButtonRegister = styled.button`
@@ -109,11 +127,13 @@ align-items: center;
   }
 `
 
-export const BurgerMenu = styled.div`
+export const BurgerMenu = styled(MdMenu)`
   display: none;
   cursor: pointer;
   @media (max-width: 768px) {
     display: block;
+    height: 30px;
+    width: 30px;
   }
 `;
 
