@@ -6,11 +6,23 @@ export const Container = styled.div`
     margin: 32px;
     background-color: var(--main-color);
     border-radius: 30px;
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-image: url(${bgImg});
-   height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
 `
+
+export const BackgroundImg = styled.div`
+  background-image: url(${bgImg});
+  background-repeat: no-repeat;
+  background-position: right top;
+  min-width: calc(100vh - 50%);
+  min-height: calc(100vh - 64px);
+  background-size: contain;
+
+  @media (max-width: 768px) {
+background-size: cover;
+border-radius: 30px;
+  }
+`;
+
 
 export const HomeContainer = styled.div`
     margin-top: 163px;
@@ -25,6 +37,12 @@ font-weight: 500;
 line-height: 70px;
 letter-spacing: -2.1px;
 margin-bottom: 28px;
+  @media (max-width: 768px) {
+font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
 `
 
 export const Paragraph = styled.p`
@@ -33,6 +51,7 @@ font-weight: 400;
 line-height: 30px;
 letter-spacing: -0.56px;
 margin-bottom: 64px;
+word-wrap: break-word;
 `
 
 export const ButtonGetStarted = styled.button`

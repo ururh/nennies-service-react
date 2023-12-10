@@ -17,13 +17,31 @@ font-size: 24px;
 font-weight: 500;
 line-height: 28px;
 letter-spacing: -0.48px;
+margin-right: 10px;
 `
+export const Content = styled.div`
+display:flex;
+width: 533px;
+justify-content: space-between;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
+
 
 export const Nav = styled.nav`
     display: flex;
     gap: 40px;
-    margin-right: 92px;
+    margin-right: 12px;
     align-items: center;
+      @media (max-width: 768px) {
+    flex-direction: column;
+    color: var( --title-text);
+    gap:15px;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
 `
 
 export const NavItem = styled(NavLink)`
@@ -49,8 +67,11 @@ export const NavItem = styled(NavLink)`
 `;
 
 export const ButtonContainer = styled.div`
-        display: flex;
+    display: flex;
     gap: 8px;
+      @media (max-width: 768px) {
+    flex-direction: column;
+  } 
 `
 
 export const ButtonLogIn = styled.button`
@@ -65,6 +86,10 @@ border: 1px solid rgba(251, 251, 251, 0.40);
 font-size: 16px;
 font-weight: 500;
 line-height: 20px;
+   &:hover,
+  &:focus {
+    transform: scale(0.9);
+  }
 `
 
 export const ButtonRegister = styled.button`
@@ -78,4 +103,17 @@ color: var(--title-text);
 line-height: 20px;
 justify-content: center;
 align-items: center;
+   &:hover,
+  &:focus {
+    transform: scale(0.9);
+  }
 `
+
+export const BurgerMenu = styled.div`
+  display: none;
+  cursor: pointer;
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
